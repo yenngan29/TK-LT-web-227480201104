@@ -1,0 +1,12 @@
+.a {
+    display: flex;
+    justify-content: space-between;
+}
+.b {
+    text-align: center;
+}
+.c {
+    text-align: center;
+    font-family: Verdana;
+    color: red;
+}
