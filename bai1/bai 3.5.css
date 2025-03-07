@@ -1,0 +1,36 @@
+span {
+  background-color: gray;
+}
+p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1100px;
+}
+h1 {
+  text-align: center;
+}
+ul.a {
+  list-style-type: circle;
+  font-family: Verdana;
+  font-size: 13pt;
+  color: black;
+}
+ul.b {
+  list-style-type: square;
+  font-family: "Tahoma";
+  font-size: 13pt;
+  color: black;
+}
+ul.c {
+  list-style-position: initial;
+  font-family: "Times new roman";
+  font-size: 13pt;
+  color: black;
+}
+#thi {
+  text-align: left;
+  font-size: 13pt;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: red;
+}
