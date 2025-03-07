@@ -1,0 +1,21 @@
+.a {
+  display: flex;
+  justify-content: space-between;
+}
+.b {
+  text-align: center;
+}
+.c {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: red;
+  font-size: 20px;
+}
+.s {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+.m {
+  position: relative;
+  left: 66px;
+}
