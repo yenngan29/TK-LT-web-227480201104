@@ -1,0 +1,48 @@
+.a {
+  display: flex;
+  justify-content: space-between;
+}
+.b {
+  text-align: center;
+}
+.c {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: red;
+  font-size: 20px;
+}
+.m {
+  display: flex;
+  flex-direction: column; /* Sắp xếp các phần theo chiều dọc */
+  align-items: flex-start; /* Căn lề trái */
+  margin: 10px 0;
+  width: 250px; /* Giới hạn độ rộng hợp lý */
+}
+
+.d,
+.n {
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  margin-bottom: 10px; /* Khoảng cách giữa các dòng */
+}
+
+.d label,
+.n label {
+  width: 80px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.d input,
+.n input {
+  flex: auto; /* Input tự mở rộng theo chiều ngang */
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.e {
+  text-align: center;
+}
+.f {
+  font-size: 30px;
+}
