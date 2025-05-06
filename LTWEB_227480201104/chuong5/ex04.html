@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tính toán số học</title>
+  </head>
+  <body>
+    <h1>Tính toán số học</h1>
+    <form method="post" action="ex04.php">
+      Số thứ nhất: <input type="text" name="so1" /><br /><br />
+      Số thứ hai: <input type="text" name="so2" /><br /><br />
+      <input type="submit" name="cong" value="Cộng" />
+      <input type="submit" name="tru" value="Trừ" />
+      <input type="submit" name="nhan" value="Nhân" />
+      <input type="submit" name="chia" value="Chia" />
+      <input type="submit" name="mod" value="Mod" />
+      <br /><br />
+      Kết quả:
+      <input
+        type="text"
+        name="ketqua"
+        value="<?php echo isset($_POST['ketqua']) ? $_POST['ketqua'] : ''; ?>"
+        readonly
+      />
+    </form>
+  </body>
+</html>

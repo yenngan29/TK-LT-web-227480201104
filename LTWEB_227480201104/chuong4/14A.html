@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Thay đổi giá trị của thuộc tính</title>
+    <meta http-equiv="content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      intput[type="text"] {
+        height: 30px;
+        font-size: 20px;
+      }
+      input[type="button"] {
+        width: 200px;
+        height: 40px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      label {
+        display: inline-block;
+        width: 130px;
+        height: 30px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Hãy nhập hai số và click vào nút Tính tổng</h2>
+    <label>Số hạng 1:</label><input type="text" name="SoHang1" id="SoHang1" />
+    <br /><br />
+    <label>Số hạng 2:</label><input type="text" name="SoHang2" id="SoHang2" />
+    <br /><br />
+    <label>Kết quả:</label
+    ><input type="text" name="KetQua" id="KetQua" /><br /><br />
+    <input
+      type="button"
+      value="Cộng"
+      onclick="KetQua.value = parseFloat(SoHang1.value) + parseFloat(SoHang2.value)"
+    />
+    <br /><br />
+    <input
+      type="button"
+      value="Trừ"
+      onclick="KetQua.value = parseFloat(SoHang1.value) - parseFloat(SoHang2.value)"
+    />
+    <br /><br />
+    <input
+      type="button"
+      value="Nhân"
+      onclick="KetQua.value = parseFloat(SoHang1.value) * parseFloat(SoHang2.value)"
+    />
+    <br /><br />
+    <input
+      type="button"
+      value="Chia"
+      onclick="KetQua.value = parseFloat(SoHang1.value) / parseFloat(SoHang2.value)"
+    />
+  </body>
+</html>

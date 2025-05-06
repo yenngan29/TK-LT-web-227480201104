@@ -1,0 +1,101 @@
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập 20B</title>
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+      }
+      h1 {
+        font-size: 24px;
+      }
+      div {
+        max-width: 400px;
+        width: 90%;
+        margin: auto;
+        padding: 15px;
+        border: solid 2px;
+        font-size: 18px;
+        color: darkgreen;
+        background-color: yellow;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      }
+      label {
+        display: block;
+        text-align: left;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      input {
+        width: 100%;
+        height: 30px;
+        font-size: 16px;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+      hr {
+        border: 1px solid gray;
+        margin: 15px 0;
+      }
+      .readonly {
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>TÍNH LƯƠNG NHÂN VIÊN</h1>
+
+    <div class="container">
+      <label>Họ tên:</label>
+      <input type="text" id="HoTen" />
+
+      <label>Năm vào làm:</label>
+      <input type="number" id="NamVaoLam" onkeyup="tinhLuong()" />
+
+      <label>Hệ số lương:</label>
+      <input type="number" id="HeSo" onkeyup="tinhLuong()" />
+
+      <label>Lương cơ sở:</label>
+      <input type="number" id="LuongCoSo" onkeyup="tinhLuong()" />
+
+      <hr />
+
+      <label>Lương cơ bản:</label>
+      <input type="text" id="LuongCoBan" class="readonly" readonly />
+
+      <label>Phụ cấp:</label>
+      <input type="text" id="PhuCap" class="readonly" readonly />
+
+      <label>Thâm niên:</label>
+      <input type="text" id="ThamNien" class="readonly" readonly />
+
+      <label>Thành tiền:</label>
+      <input type="text" id="ThanhTien" class="readonly" readonly />
+    </div>
+
+    <script>
+      function tinhLuong() {
+        var namHienTai = new Date().getFullYear();
+        var heSo = parseFloat(document.getElementById("HeSo").value) || 0;
+        var luongCoSo =
+          parseFloat(document.getElementById("LuongCoSo").value) || 0;
+        var namVaoLam =
+          parseInt(document.getElementById("NamVaoLam").value) || 0;
+
+        var luongCoBan = heSo * luongCoSo;
+        var phuCap = 0.25 * luongCoBan;
+        var thamNien = namHienTai - namVaoLam;
+        var thanhTien = luongCoBan + phuCap;
+
+        document.getElementById("LuongCoBan").value = luongCoBan.toFixed(2);
+        document.getElementById("PhuCap").value = phuCap.toFixed(2);
+        document.getElementById("ThamNien").value = thamNien;
+        document.getElementById("ThanhTien").value = thanhTien.toFixed(2);
+      }
+    </script>
+  </body>
+</html>

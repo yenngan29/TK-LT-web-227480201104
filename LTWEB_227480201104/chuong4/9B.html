@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bài tập 9B</title>
+  </head>
+  <body>
+    <h2>Nhập tên các thiết bị văn phòng</h2>
+    <textarea
+      id="inputDevices"
+      rows="5"
+      cols="50"
+      placeholder="Nhập mỗi thiết bị trên một dòng..."
+    ></textarea
+    ><br />
+    <button onclick="showComputers()">Hiển thị thiết bị 'Computer'</button>
+
+    <h3>Danh sách 'Computer' được tìm thấy:</h3>
+    <table border="1" id="outputTable">
+      <tr>
+        <th>STT</th>
+        <th>Tên thiết bị</th>
+      </tr>
+    </table>
+
+    <script>
+      function showComputers() {
+        const input = document.getElementById("inputDevices").value;
+        const lines = input.split("\n").map((item) => item.trim());
+        const computers = lines.filter(
+          (item) => item.toLowerCase() === "computer"
+        );
+
+        const table = document.getElementById("outputTable");
+        // Xóa các dòng cũ (trừ dòng tiêu đề)
+        while (table.rows.length > 1) {
+          table.deleteRow(1);
+        }
+
+        // Thêm các dòng mới
+        computers.forEach((device, index) => {
+          const row = table.insertRow();
+          const cell1 = row.insertCell(0);
+          const cell2 = row.insertCell(1);
+          cell1.innerHTML = index + 1;
+          cell2.innerHTML = device;
+        });
+      }
+    </script>
+  </body>
+</html>

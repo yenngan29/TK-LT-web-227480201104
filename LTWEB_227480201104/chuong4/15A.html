@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Thay đổi thuộc tính của trang Web</title>
+  </head>
+  <body>
+    <h2>Nhập vào các giá trị và nhấn nút Thay đổi</h2>
+    <label for="TieuDe">Tiêu đề mới:</label>
+    <input type="text" id="TieuDe" /><br /><br />
+
+    <label for="MauNen">Màu nền:</label>
+    <input type="text" id="MauNen" /><br /><br />
+
+    <label for="MauChu">Màu chữ:</label>
+    <input type="text" id="MauChu" /><br /><br />
+
+    <label for="TrangThai">Trạng thái:</label>
+    <input type="text" id="TrangThai" /><br /><br />
+
+    <button onclick="CapNhat()">Thay đổi</button>
+
+    <script>
+      function CapNhat() {
+        document.title = document.getElementById("TieuDe").value;
+        document.body.style.backgroundColor =
+          document.getElementById("MauNen").value;
+        document.body.style.color = document.getElementById("MauChu").value;
+        window.defaultStatus = document.getElementById("TrangThai").value;
+      }
+    </script>
+  </body>
+</html>

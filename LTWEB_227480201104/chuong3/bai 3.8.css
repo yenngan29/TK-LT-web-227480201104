@@ -1,0 +1,89 @@
+/* Reset mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Thanh menu chính */
+.menu {
+  display: flex;
+  list-style: none;
+  background: yellow;
+}
+
+.menu > li {
+  position: relative;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid green;
+}
+
+/* Loại bỏ đường ngăn cho mục cuối cùng */
+.menu > li:last-child {
+  border-right: none;
+}
+
+/* Định dạng cho các liên kết menu */
+.menu a {
+  display: block;
+  text-decoration: none;
+  color: rgb(11, 45, 168);
+  padding: 10px 20px;
+}
+
+/* Hiệu ứng hover cho liên kết chính */
+.menu a:hover {
+  background-color: green;
+}
+
+/* Dropdown chung cho menu Khoá Học và Bài Viết */
+.menu-con-kh,
+.menu-con-bv {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 100;
+}
+
+/* Hiển thị dropdown khi hover vào menu cha */
+.menu > li:hover > .menu-con-kh,
+.menu > li:hover > .menu-con-bv {
+  display: block;
+}
+
+/* Reset danh sách trong dropdown */
+.menu-con-kh ul,
+.menu-con-bv ul,
+.submenu {
+  list-style: none;
+}
+
+/* Định dạng liên kết trong dropdown và submenu */
+.menu-con-kh a,
+.menu-con-bv a,
+.submenu a {
+  display: block;
+  padding: 10px 20px;
+  width: 200px;
+  color: black;
+}
+
+/* Submenu cho Tin học căn bản */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 100;
+}
+
+/* Hiển thị submenu khi hover vào mục cha */
+.menu-con-kh li:hover > .submenu {
+  display: block;
+}

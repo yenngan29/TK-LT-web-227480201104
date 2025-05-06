@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>Thay đổi màu nền</title>
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <b> Bạn hãy chọn màu nền:<br /></b>
+
+    <input
+      type="radio"
+      id="yellow"
+      name="mau"
+      value="yellow"
+      onclick="DoiMau('yellow')"
+    />
+    <label for="red">Màu vàng</label><br />
+
+    <input
+      type="radio"
+      id="green"
+      name="mau"
+      value="green"
+      onclick="DoiMau('green')"
+    />
+    <label for="blue">Màu xanh lá</label><br />
+
+    <input
+      type="radio"
+      id="brown"
+      name="mau"
+      value="brown"
+      onclick="DoiMau('brown')"
+    />
+    <label for="brown">Màu nâu</label><br />
+
+    <input
+      type="radio"
+      id="magenta"
+      name="mau"
+      value="magenta"
+      onclick="DoiMau('magenta')"
+    />
+    <label for="lavender">Màu magenta</label><br />
+
+    <script>
+      function DoiMau(id) {
+        document.bgColor = document.getElementById(id).value;
+      }
+    </script>
+  </body>
+</html>

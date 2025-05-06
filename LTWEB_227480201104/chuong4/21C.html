@@ -1,0 +1,122 @@
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Phép toán số học</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f4f4f4;
+      }
+
+      div {
+        background: #ffffff;
+        width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      label {
+        font-size: 18px;
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+      }
+
+      input[type="text"],
+      select {
+        width: 100%;
+        height: 40px;
+        font-size: 18px;
+        margin-top: 5px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      select {
+        background: #e8f0fe;
+      }
+
+      input[type="button"] {
+        width: 100%;
+        height: 45px;
+        font-size: 20px;
+        font-weight: bold;
+        background: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: 0.3s;
+      }
+
+      input[type="button"]:hover {
+        background: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>TÍNH TOÁN SỐ HỌC</h1>
+    <div>
+      <label>Số hạng 1:</label><input type="text" id="So01" /> <br /><br />
+      <label>Số hạng 2:</label><input type="text" id="So02" /> <br /><br />
+      <label>Kết quả:</label><input type="text" id="KetQua" readonly />
+      <br /><br />
+
+      <label>Phép toán:</label> <br /><br />
+      <select id="phepToan">
+        <option value="cong">Cộng</option>
+        <option value="tru">Trừ</option>
+        <option value="nhan">Nhân</option>
+        <option value="chia">Chia</option>
+      </select>
+      <br />
+
+      <input type="button" value="Tính" onclick="tinhtoan()" />
+    </div>
+    <script>
+      function tinhtoan() {
+        var a = parseFloat(document.getElementById("So01").value);
+        var b = parseFloat(document.getElementById("So02").value);
+        var phepToan = document.getElementById("phepToan").value;
+        var ketQua = 0;
+
+        if (isNaN(a) || isNaN(b)) {
+          alert("Vui lòng nhập số hợp lệ!");
+          return;
+        }
+
+        switch (phepToan) {
+          case "cong":
+            ketQua = a + b;
+            break;
+          case "tru":
+            ketQua = a - b;
+            break;
+          case "nhan":
+            ketQua = a * b;
+            break;
+          case "chia":
+            if (b !== 0) {
+              ketQua = a / b;
+            } else {
+              alert("Không thể chia cho 0!");
+              return;
+            }
+            break;
+        }
+
+        document.getElementById("KetQua").value = ketQua;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <title>Thay đổi giá trị của thuộc tính</title>
+    <meta http-equiv="content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      input[type="text"] {
+        height: 30px;
+        font-size: 20px;
+      }
+
+      input[type="button"] {
+        width: 200px;
+        height: 40px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      label {
+        display: inline-block;
+        width: 130px;
+        height: 30px;
+        font-size: 20px;
+      }
+
+      div {
+        margin-left: 20px;
+        padding-left: 10px;
+        border: solid 2px;
+        width: 300px;
+        font-size: 20px;
+        color: blue;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <script language="Javascript">
+      document.write("<h1>TÍNH TOÁN SỐ HỌC</h1>");
+
+      function tinhtoan() {
+        var a = parseInt(SoHang1.value);
+        var b = parseInt(SoHang2.value);
+        var ketQua = 0;
+
+        if (document.getElementById("cong").checked) {
+          ketQua = a + b;
+        } else if (document.getElementById("tru").checked) {
+          ketQua = a - b;
+        } else if (document.getElementById("nhan").checked) {
+          ketQua = a * b;
+        } else if (document.getElementById("chia").checked) {
+          if (b !== 0) {
+            ketQua = a / b;
+          } else {
+            alert("Không thể chia cho 0!");
+            return; // Dừng hàm nếu chia cho 0
+          }
+        }
+
+        KetQua.value = ketQua;
+      }
+    </script>
+    <br /><br />
+    <label>Số hạng 1:</label><input type="text" id="SoHang1" /> <br /><br />
+    <label>Số hạng 2:</label><input type="text" id="SoHang2" /> <br /><br />
+    <label>Kết quả:</label><input type="text" id="KetQua" /><br /><br />
+    <label>Phép toán:</label> <br /><br />
+    <div>
+      <input type="radio" id="cong" name="pt" />Cộng <br /><br />
+      <input type="radio" id="tru" name="pt" />Trừ <br /><br />
+      <input type="radio" id="nhan" name="pt" />Nhân <br /><br />
+      <input type="radio" id="chia" name="pt" />Chia <br /><br />
+    </div>
+    <br />
+    <input type="button" value="Tính" onclick="tinhtoan()" />
+  </body>
+</html>

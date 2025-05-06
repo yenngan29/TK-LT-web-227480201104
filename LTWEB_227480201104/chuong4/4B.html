@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bài tập JavaScript 4B</title>
+    <script>
+      function chhoTen() {
+        document.getElementById("txthoten").value = "Chào";
+      }
+
+      function chdonvi() {
+        document.getElementById("txtdonvi").value = "Đơn vị";
+      }
+    </script>
+  </head>
+  <body>
+    <input type="button" name="hoten" value="Họ tên" onclick="chhoTen()" />
+    <br /><br />
+    <input type="text" name="txthoten" id="txthoten" value="" size="30" />
+    <br /><br />
+    <input type="button" name="donvi" value="Đơn vị" onclick="chdonvi()" />
+    <br /><br />
+    <input type="text" name="txtdonvi" id="txtdonvi" value="" size="30" />
+  </body>
+</html>

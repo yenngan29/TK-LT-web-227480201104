@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Xử lý sự kiện</title>
+    <meta http-equiv="content-Type" content="text/html; charset=UTF-8" />
+    <script>
+      function showMessage(message) {
+        alert(message);
+      }
+    </script>
+  </head>
+  <body style="font-family: Arial">
+    <input
+      type="button"
+      value="Gửi"
+      onmousemove="showMessage('Chuột trong nút Gửi');"
+    />
+    <input
+      type="text"
+      name="hoten"
+      onmousemove="showMessage('Chuột trong textbox ');"
+    />
+
+    <br /><br />
+    <input
+      type="radio"
+      name="GioiTinh"
+      id="GioiTinh"
+      value="Nam"
+      onmousemove="showMessage('Chuột trong Nam');"
+    />
+    Nam
+    <input
+      type="radio"
+      name="GioiTinh"
+      id="GioiTinh"
+      value="Nữ"
+      onmousemove="showMessage('Chuột trong Nữ');"
+    />
+    Nữ
+  </body>
+</html>

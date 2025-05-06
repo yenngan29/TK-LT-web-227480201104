@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lấy ngày tháng năm hiện tại</title>
+    <script>
+      function hienThiThoiGian() {
+        var today = new Date();
+
+        var ngay = today.getDate();
+        var thang = today.getMonth() + 1;
+        var nam = today.getFullYear();
+
+        var chuoiNgay = "Hôm nay là: " + ngay + "/" + thang + "/" + nam;
+        document.getElementById("hienthi").innerText = chuoiNgay;
+      }
+    </script>
+  </head>
+  <body onload="hienThiThoiGian()">
+    <h2 id="hienthi"></h2>
+  </body>
+</html>
