@@ -1,0 +1,229 @@
+═══════════════════════════════════════════════════════════════════════
+    HƯỚNG DẪN CÀI ĐẶT HỆ THỐNG QUẢN LÝ NHÀ HÀNG
+═══════════════════════════════════════════════════════════════════════
+
+📋 BƯỚC 1: IMPORT DATABASE
+──────────────────────────────────────────────────────────────────────
+
+Cách 1: Sử dụng phpMyAdmin
+   1. Mở trình duyệt và truy cập: http://localhost/phpmyadmin
+   2. Click vào tab "Import" (Nhập)
+   3. Click "Choose File" và chọn file "database.sql" trong thư mục này
+   4. Click nút "Go" (Thực hiện) ở cuối trang
+   5. Đợi thông báo "Import has been successfully finished"
+
+Cách 2: Sử dụng Command Line (cho người dùng nâng cao)
+   1. Mở Command Prompt hoặc PowerShell
+   2. Chạy lệnh:
+      cd C:\laragon\www\QL_Khach_San
+      mysql -u root -p < database.sql
+   3. Nhấn Enter (nếu không có password) hoặc nhập password MySQL
+
+
+📋 BƯỚC 2: KIỂM TRA CẤU HÌNH
+──────────────────────────────────────────────────────────────────────
+
+Mở file "config.php" và đảm bảo thông tin đúng:
+
+   DB_HOST: localhost       (Thường không cần đổi)
+   DB_USER: root           (Thường không cần đổi với Laragon)
+   DB_PASS:                (Để trống nếu không có password)
+   DB_NAME: ql_nha_hang    (Tên database vừa import)
+
+
+📋 BƯỚC 3: KHỞI ĐỘNG HỆ THỐNG
+──────────────────────────────────────────────────────────────────────
+
+1. Đảm bảo Laragon đang chạy (Start All)
+2. Mở trình duyệt và truy cập:
+   
+   🏠 Trang chủ:
+      http://localhost/QL_Khach_San
+      hoặc
+      http://ql-khach-san.test (nếu đã config virtual host)
+
+
+📋 CÁC TRANG CHÍNH TRONG HỆ THỐNG
+──────────────────────────────────────────────────────────────────────
+
+DÀNH CHO KHÁCH HÀNG:
+   🏠 Trang chủ:         http://localhost/QL_Khach_San/index.php
+   📖 Xem menu:          http://localhost/QL_Khach_San/menu.php
+   📅 Đặt bàn:           http://localhost/QL_Khach_San/reservation.php
+   🍽️ Gọi món:           http://localhost/QL_Khach_San/order.php
+
+DÀNH CHO NHÂN VIÊN:
+   👨‍🍳 Màn hình bếp:      http://localhost/QL_Khach_San/kitchen.php
+   💰 Thanh toán:        http://localhost/QL_Khach_San/billing.php
+
+DÀNH CHO QUẢN LÝ:
+   📊 Trang admin:       http://localhost/QL_Khach_San/admin/
+
+
+📋 QUY TRÌNH SỬ DỤNG MẪU
+──────────────────────────────────────────────────────────────────────
+
+► KHÁCH HÀNG ĐẶT BÀN:
+   1. Vào trang "Đặt bàn"
+   2. Điền form (tên, SĐT, ngày giờ, số khách)
+   3. Nhấn "Đặt Bàn"
+   4. Quản lý xác nhận trong trang Admin > Đặt bàn
+
+► KHÁCH HÀNG GỌI MÓN TẠI BÀN:
+   1. Vào trang "Gọi món"
+   2. Chọn bàn (ví dụ: Bàn B01)
+   3. Chọn các món từ menu
+   4. Điều chỉnh số lượng trong giỏ hàng
+   5. Nhấn "Gửi Đơn Hàng"
+
+► NHÂN VIÊN BẾP XỬ LÝ:
+   1. Mở "Màn hình bếp"
+   2. Thấy đơn hàng mới từ Bàn B01
+   3. Nhấn "Bắt Đầu Làm"
+   4. Sau khi làm xong, nhấn "Hoàn Thành"
+
+► THU NGÂN THANH TOÁN:
+   1. Vào trang "Thanh toán"
+   2. Chọn Bàn B01
+   3. Kiểm tra hóa đơn
+   4. Chọn phương thức (Tiền mặt/Thẻ/Chuyển khoản)
+   5. Nhấn "Thanh Toán"
+   6. In hóa đơn cho khách
+
+
+📋 DỮ LIỆU MẪU CÓ SẴN
+──────────────────────────────────────────────────────────────────────
+
+Database đã có sẵn:
+   ✓ 5 danh mục món ăn (Khai vị, Món chính, Món phụ, Tráng miệng, Đồ uống)
+   ✓ 14 món ăn với giá cả
+   ✓ 10 bàn (từ B01 đến B10) với sức chứa 2-8 người
+
+
+📋 TÍNH NĂNG CHÍNH
+──────────────────────────────────────────────────────────────────────
+
+✅ Trang giới thiệu nhà hàng
+✅ Xem menu trực tuyến
+✅ Đặt bàn online (với form thông tin đầy đủ)
+✅ Gọi món điện tử tại bàn
+✅ Màn hình bếp hiển thị đơn hàng realtime
+✅ Thanh toán và xuất hóa đơn
+✅ Quản lý món ăn (thêm/sửa/xóa)
+✅ Quản lý bàn và trạng thái
+✅ Quản lý đơn hàng
+✅ Quản lý đặt bàn
+✅ Thống kê doanh thu
+
+
+📋 QUẢN LÝ HỆ THỐNG (ADMIN)
+──────────────────────────────────────────────────────────────────────
+
+Truy cập: http://localhost/QL_Khach_San/admin/
+
+1. TỔNG QUAN:
+   - Xem thống kê: đơn hàng, doanh thu, bàn đang dùng
+   - Xem đơn hàng gần đây
+
+2. QUẢN LÝ MÓN ĂN:
+   - Thêm món mới: điền tên, mô tả, giá, chọn danh mục
+   - Ẩn/Hiện món (khi hết nguyên liệu)
+   - Xóa món
+
+3. QUẢN LÝ BÀN:
+   - Thêm bàn mới
+   - Cập nhật trạng thái: Trống/Có khách/Đã đặt
+
+4. QUẢN LÝ ĐẶT BÀN:
+   - Xem danh sách đặt bàn
+   - Xác nhận/Hủy đặt bàn
+
+5. QUẢN LÝ ĐƠN HÀNG:
+   - Xem tất cả đơn hàng
+   - Xem chi tiết từng đơn
+   - In lại hóa đơn
+
+
+📋 XỬ LÝ LỖI THƯỜNG GẶP
+──────────────────────────────────────────────────────────────────────
+
+❌ LỖI: "Kết nối thất bại"
+   ✓ Kiểm tra Laragon đã Start chưa
+   ✓ Kiểm tra MySQL service đang chạy
+   ✓ Kiểm tra thông tin trong config.php
+
+❌ LỖI: Không hiển thị tiếng Việt đúng
+   ✓ Database đã import đúng chưa
+   ✓ Charset trong config.php phải là utf8mb4
+
+❌ LỖI: Trang trắng không có gì
+   ✓ Bật display_errors trong .htaccess
+   ✓ Xem file error.log của Apache
+   ✓ Kiểm tra PHP version (cần >= 7.4)
+
+❌ LỖI: CSS không load
+   ✓ Kiểm tra đường dẫn: assets/css/style.css
+   ✓ Clear cache trình duyệt (Ctrl + F5)
+
+
+📋 GỢI Ý SỬ DỤNG
+──────────────────────────────────────────────────────────────────────
+
+💡 TIPS:
+   • Màn hình bếp tự động refresh mỗi 30 giây
+   • Nên mở màn hình bếp trên màn hình/máy tính riêng
+   • Có thể mở nhiều tab gọi món cho nhiều bàn cùng lúc
+   • In hóa đơn bằng Ctrl+P hoặc nút "In hóa đơn"
+   • Dữ liệu mẫu có thể xóa và thêm dữ liệu thực
+
+🎨 TÙY CHỈNH:
+   • Đổi màu sắc: Chỉnh file assets/css/style.css
+   • Đổi logo: Thay emoji 🍽️ trong các file PHP
+   • Thêm ảnh món ăn: Upload vào assets/images/ và update DB
+   • Thay đổi thông tin nhà hàng: Sửa trong footer các trang
+
+
+📋 CẤU TRÚC THƯ MỤC
+──────────────────────────────────────────────────────────────────────
+
+QL_Khach_San/
+│
+├── 📁 admin/              ← Trang quản lý
+│   ├── index.php          (Tổng quan)
+│   ├── dishes.php         (Quản lý món ăn)
+│   ├── tables.php         (Quản lý bàn)
+│   ├── orders.php         (Quản lý đơn hàng)
+│   └── reservations.php   (Quản lý đặt bàn)
+│
+├── 📁 api/                ← API xử lý
+│   ├── create_order.php   (Tạo đơn hàng)
+│   └── update_order_status.php
+│
+├── 📁 assets/             ← CSS, JS, Images
+│   └── css/
+│       └── style.css      (CSS chính)
+│
+├── 📄 config.php          ← Cấu hình database
+├── 📄 database.sql        ← File import database
+├── 📄 index.php           ← Trang chủ
+├── 📄 menu.php            ← Xem menu
+├── 📄 order.php           ← Gọi món
+├── 📄 reservation.php     ← Đặt bàn
+├── 📄 kitchen.php         ← Màn hình bếp
+├── 📄 billing.php         ← Thanh toán
+└── 📄 invoice.php         ← Hóa đơn
+
+
+═══════════════════════════════════════════════════════════════════════
+
+                    ✅ CÀI ĐẶT HOÀN TẤT!
+        
+        Hãy truy cập: http://localhost/QL_Khach_San
+              để bắt đầu sử dụng hệ thống!
+
+═══════════════════════════════════════════════════════════════════════
+
+
+
+
+
